@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "Floating Button Extension",
+	"version": "1.0",
+	"description": "在任意网页显示一个悬浮点",
+	"permissions": [
+		"activeTab",
+		"contextMenus",
+		"tabs"
+	],
+	"icons": {
+		"16": "RealmAppIcon-1024.png",
+		"48": "RealmAppIcon-1024.png",
+		"128": "RealmAppIcon-1024.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content-script.js"]
+		}
+	],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	}
+}
